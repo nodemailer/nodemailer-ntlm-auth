@@ -1,6 +1,6 @@
 {
     "name": "nodemailer-ntlm-auth",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "NTLM authentication module for Nodemailer",
     "main": "index.js",
     "scripts": {

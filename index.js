@@ -3,7 +3,8 @@
 const ntlm = require('httpntlm/ntlm');
 
 module.exports = async ctx => {
-    let cfg = ctx.auth.credentials.pass || {};
+    let cfg = ctx.auth.credentials.options || {};
+
     let authMessage = ntlm.createType1Message({
         domain: cfg.domain || '',
         workstation: cfg.workstation || ''
@@ -30,7 +31,7 @@ module.exports = async ctx => {
         domain: cfg.domain || '',
         workstation: cfg.workstation || '',
         username: ctx.auth.credentials.user,
-        password: cfg.pass
+        password: ctx.auth.credentials.pass
     });
 
     type3Message = type3Message.substring(5); // remove the "NTLM " prefix

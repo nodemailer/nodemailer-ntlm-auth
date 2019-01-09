@@ -26,10 +26,10 @@ let transporter = nodemailer.createTransport({
         type: 'custom',
         method: 'NTLM',
         user: 'username',
-        pass: {
+        pass: 'verysecret',
+        options: {
             domain: 'my-domain',
-            workstation: 'my-desktop',
-            pass: 'verysecret'
+            workstation: 'my-desktop'
         }
     },
     customAuth: {
